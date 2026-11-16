@@ -1,0 +1,24 @@
+name: Check links
+
+# Vérifie les liens du site à chaque push sur main (et à la demande).
+# Le déploiement reste géré par Vercel : ce workflow prévient, il ne bloque pas.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Look for broken links
+        # LinkedIn bloque les robots ; les URL Google Fonts servent seulement au preconnect.
+        run: >
+          npx linkinator@8 . --recurse
+          --skip "linkedin.com"
+          --skip "^https://fonts.googleapis.com/?$"
+          --skip "^https://fonts.gstatic.com/?$"
