@@ -2,3 +2,6 @@
 CLAUDE.md
 LISEZMOI.txt
 README.md
+Dockerfile
+.dockerignore
+.github

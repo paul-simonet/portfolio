@@ -1,0 +1,9 @@
+.git
+.github
+.claude
+CLAUDE.md
+README.md
+Dockerfile
+.dockerignore
+.gitignore
+.vercelignore
