@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Look for broken links
-        # LinkedIn bloque les robots ; les URL Google Fonts servent seulement au preconnect.
+        # LinkedIn bloque les robots.
         run: >
           npx linkinator@8 . --recurse
           --skip "linkedin.com"
-          --skip "^https://fonts.googleapis.com/?$"
-          --skip "^https://fonts.gstatic.com/?$"

@@ -7,10 +7,20 @@
 <meta name="description" content="Paul Simonet, élève-ingénieur (ESILV × IFT). Biomatériaux en mycélium, capteurs et prototypage. Cherche un stage de fin d'études de 6 mois à partir de février 2027.">
 <meta property="og:title" content="Paul Simonet · Portfolio">
 <meta property="og:description" content="Élève-ingénieur en dernière année : panneaux en mycélium, stations météo en Martinique, un décapsuleur financé sur Kickstarter. Cherche un stage de fin d'études en R&amp;D ou prototypage.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* polices hébergées sur le site (copies des fichiers Google Fonts, sous-ensembles latin et latin étendu) :
+   pas de feuille de style externe qui bloque l'affichage, ni de connexion à deux domaines tiers */
+@font-face{font-family:"Bricolage Grotesque";font-weight:400 800;font-stretch:75% 100%;font-display:swap;src:url(fonts/bricolage-grotesque-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bricolage Grotesque";font-weight:400 800;font-stretch:75% 100%;font-display:swap;src:url(fonts/bricolage-grotesque-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Sans";font-weight:400 600;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-weight:400 600;font-display:swap;src:url(fonts/instrument-sans-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-500-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-500-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 /* Layout: carnet de labo d'ingénieur — une colonne large, index de projets en lignes, un réseau mycélien vivant en fond, un curseur-sonde, des fiches projet en surimpression. */
 :root{
   /* thème unique « sous-bois » */
@@ -217,6 +227,7 @@ section{padding-block:clamp(56px,8vw,112px)}
 #intro-gl{opacity:0;transition:opacity 1.8s ease}
 #intro.ready #intro-gl{opacity:1}
 #intro-track{height:1000vh}
+.skip-intro #intro,.skip-intro #intro-track{display:none}
 #intro.passed,#intro.passed *{pointer-events:none !important}
 .replay{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:none;border:1px solid var(--rule);border-radius:99px;padding:5px 11px;white-space:nowrap;transition:color .2s,border-color .2s}
 .replay:hover{color:var(--ink);border-color:var(--ink)}
@@ -294,6 +305,29 @@ section{padding-block:clamp(56px,8vw,112px)}
   .p-title,.p-arrow,#detail,body{transition:none}
 }
 </style>
+<script>
+/* Avant le premier affichage : l'entrée 3D (intro.js) va-t-elle se jouer ? Sinon on la masque tout de suite,
+   pour ne jamais afficher puis retirer sa piste de défilement (la page sauterait de 8 à 10 écrans). */
+(() => {
+  const h = document.documentElement;
+  // vrai GPU ? Un WebGL rendu par le processeur (SwiftShader, llvmpipe…) ferait tourner la forêt
+  // à une image toutes les quelques secondes et bloquerait la page.
+  window.psGPU = () => {
+    try {
+      const gl = document.createElement('canvas').getContext('webgl2', { failIfMajorPerformanceCaveat: true });
+      if (!gl) return false;
+      const info = gl.getExtension('WEBGL_debug_renderer_info');
+      const name = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+      const lose = gl.getExtension('WEBGL_lose_context'); if (lose) lose.loseContext();
+      return !/swiftshader|llvmpipe|softpipe|software|basic render/i.test(name);
+    } catch(_){ return false; }
+  };
+  let seen = false; try { seen = !!sessionStorage.getItem('ps-intro-done'); } catch(_){}
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || seen || location.hash.length > 1){ h.classList.add('skip-intro'); return; }
+  h.dataset.gl = window.psGPU() ? 'ok' : 'soft';
+  if (h.dataset.gl === 'soft') h.classList.add('skip-intro');
+})();
+</script>
 </head>
 <body>
 
@@ -381,7 +415,7 @@ section{padding-block:clamp(56px,8vw,112px)}
         <p class="mono hint">↳ <span class="fine" data-en="The background is a simulated mycelium culture: <b>move</b> to guide it, <b>click</b> to inoculate.">Le fond est une culture de mycélium simulée : <b>bougez</b> pour la guider, <b>cliquez</b> pour ensemencer.</span><span class="touch" data-en="The background is a simulated mycelium culture: <b>tap</b> to inoculate.">Le fond est une culture de mycélium simulée : <b>touchez</b> pour ensemencer.</span></p>
       </div>
       <figure class="specimen">
-        <div class="frame"><img data-src="photo" alt="Paul Simonet"></div>
+        <div class="frame"><img src="assets/photo.jpg" data-src="photo" alt="Paul Simonet" fetchpriority="high"></div>
         <figcaption class="mono"><span>Fig. 0</span><span>P. Simonet</span></figcaption>
       </figure>
     </div>
@@ -429,9 +463,9 @@ section{padding-block:clamp(56px,8vw,112px)}
     <div class="wrap">
       <div class="sec-head"><h2 data-en="Background">Parcours</h2><span class="mono" data-en="Education &amp; experience">Formation &amp; expériences</span></div>
       <ul class="tl">
-        <li><span class="when">2022 → 2027</span><span class="what"><b data-en="MSc Engineering &amp; Management, double degree">MSc Ingénierie &amp; Management, double diplôme</b><span>ESILV / EMLV, Paris La Défense</span></span><img data-src="esilv" alt="ESILV"></li>
-        <li><span class="when">2025 → 2027</span><span class="what"><b data-en="Creative Technology major">Majeure Creative Technology</b><span data-en="Institute for Future Technologies, De Vinci Higher Education · How to Make (Almost) Anything, innovation projects">Institute for Future Technologies, De Vinci Higher Education · How to Make (Almost) Anything, projets d'innovation</span></span><img data-src="ift" alt="Institute for Future Technologies"></li>
-        <li><span class="when" data-en="Apr – Jul 2026">Avr. – juil. 2026</span><span class="what"><b data-en="R&amp;D engineering intern, MyGwave × City of Le Lamentin">Stagiaire ingénieur R&amp;D, MyGwave × Ville du Lamentin</b><span data-en="Martinique · weather stations, Python data pipeline and dashboard, solar-powered prototypes, with FabLab La Sphère">Martinique · stations météo, pipeline de données Python et tableau de bord, prototypes solaires autonomes, avec le FabLab La Sphère</span></span><img data-src="lamentin" alt="Le Lamentin"></li>
+        <li><span class="when">2022 → 2027</span><span class="what"><b data-en="MSc Engineering &amp; Management, double degree">MSc Ingénierie &amp; Management, double diplôme</b><span>ESILV / EMLV, Paris La Défense</span></span><img data-src="esilv" alt="ESILV" loading="lazy" decoding="async"></li>
+        <li><span class="when">2025 → 2027</span><span class="what"><b data-en="Creative Technology major">Majeure Creative Technology</b><span data-en="Institute for Future Technologies, De Vinci Higher Education · How to Make (Almost) Anything, innovation projects">Institute for Future Technologies, De Vinci Higher Education · How to Make (Almost) Anything, projets d'innovation</span></span><img data-src="ift" alt="Institute for Future Technologies" loading="lazy" decoding="async"></li>
+        <li><span class="when" data-en="Apr – Jul 2026">Avr. – juil. 2026</span><span class="what"><b data-en="R&amp;D engineering intern, MyGwave × City of Le Lamentin">Stagiaire ingénieur R&amp;D, MyGwave × Ville du Lamentin</b><span data-en="Martinique · weather stations, Python data pipeline and dashboard, solar-powered prototypes, with FabLab La Sphère">Martinique · stations météo, pipeline de données Python et tableau de bord, prototypes solaires autonomes, avec le FabLab La Sphère</span></span><img data-src="lamentin" alt="Le Lamentin" loading="lazy" decoding="async"></li>
         <li><span class="when" data-en="Jun – Jul 2024">Juin – juil. 2024</span><span class="what"><b data-en="Assistant engineer intern, HEPER Coordination Ingénierie">Assistant ingénieur, HEPER Coordination Ingénierie</b><span data-en="Paris · site supervision on the Fondation Cartier project">Paris · suivi de chantier sur le projet Fondation Cartier</span></span><span></span></li>
         <li><span class="when">2024</span><span class="what"><b data-en="International exchange">Échange international</b><span>Dorset College, Dublin</span></span><span></span></li>
       </ul>
@@ -450,13 +484,13 @@ section{padding-block:clamp(56px,8vw,112px)}
       <div class="sec-head"><h2 data-en="Outside the lab">Hors du labo</h2><span class="mono" data-en="Climbing · mountains · volunteering">Escalade · montagne · asso</span></div>
       <div class="off">
         <figure class="main">
-          <img data-src="dvcc" alt="DVCC, De Vinci Climbing Contest">
+          <img data-src="dvcc" alt="DVCC, De Vinci Climbing Contest" loading="lazy" decoding="async">
           <figcaption class="mono">DVCC · De Vinci Climbing Contest · 2025</figcaption>
         </figure>
         <div class="side">
-          <div class="row"><img data-src="leo" alt="Léo Climb"><p data-en="With Léo Climb, the climbing club I joined, I organised a bouldering competition that brought together more than 150 students from 8 engineering schools.">Avec Léo Climb, l'association d'escalade que j'ai rejointe, j'ai organisé une compétition de bloc qui a réuni plus de 150 étudiants venus de 8 écoles d'ingénieurs.</p></div>
+          <div class="row"><img data-src="leo" alt="Léo Climb" loading="lazy" decoding="async"><p data-en="With Léo Climb, the climbing club I joined, I organised a bouldering competition that brought together more than 150 students from 8 engineering schools.">Avec Léo Climb, l'association d'escalade que j'ai rejointe, j'ai organisé une compétition de bloc qui a réuni plus de 150 étudiants venus de 8 écoles d'ingénieurs.</p></div>
           <p data-en="Volunteer at &lt;a href=&quot;https://www.jeveuxaider.gouv.fr/organisations/17149-la-balade-des-lucioles&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;La Balade des Lucioles ↗&lt;/a&gt;, an association in Paris: every week we hand out more than 50 meals made from unsold food.">Bénévole à <a href="https://www.jeveuxaider.gouv.fr/organisations/17149-la-balade-des-lucioles" target="_blank" rel="noopener">La Balade des Lucioles ↗</a>, association parisienne : nous redistribuons chaque semaine plus de 50 repas à partir d'invendus.</p>
-          <figure><img data-src="bornand" alt="Le Grand-Bornand"><figcaption class="mono" data-en="Le Grand-Bornand · my favourite place">Le Grand-Bornand · mon endroit préféré</figcaption></figure>
+          <figure><img data-src="bornand" alt="Le Grand-Bornand" loading="lazy" decoding="async"><figcaption class="mono" data-en="Le Grand-Bornand · my favourite place">Le Grand-Bornand · mon endroit préféré</figcaption></figure>
         </div>
       </div>
     </div>
@@ -546,7 +580,16 @@ const fine = matchMedia('(pointer: fine)').matches;
 const store = { get(k){ try { return localStorage.getItem(k); } catch(_) { return null; } }, set(k, v){ try { localStorage.setItem(k, v); } catch(_) {} } };
 let lang = store.get('ps-lang') === 'en' ? 'en' : 'fr';
 const L = (fr, en) => lang === 'en' ? en : fr;
-function setImgs(scope){ scope.querySelectorAll('[data-src]').forEach(el => { if (IMG[el.dataset.src]) el.src = IMG[el.dataset.src]; }); }
+/* Les images en chargement différé ne partent qu'après le premier affichage : le texte et les polices
+   passent d'abord, puis le navigateur charge ce qui approche de l'écran. */
+const afterPaint = f => requestAnimationFrame(() => setTimeout(f, 0));
+let painted = false; const queued = [];
+afterPaint(() => { painted = true; queued.splice(0).forEach(([el, u]) => { el.src = u; }); });
+function setImgs(scope){ scope.querySelectorAll('[data-src]').forEach(el => {
+  const u = IMG[el.dataset.src];
+  if (!u || el.getAttribute('src') === u) return;
+  if (!painted && el.loading === 'lazy') queued.push([el, u]); else el.src = u;
+}); }
 setImgs(document);
 
 /* ================= Données projets ================= */
@@ -630,7 +673,7 @@ function renderList(){
       <span><span class="p-title">${pick(p.title)}${p.state ? `<span class="state">${pick(p.state)}</span>` : ''}</span><span class="p-desc">${pick(p.desc)}</span></span>
       <span class="p-tags">${pick(p.tags)}</span>
       <span class="p-arrow" aria-hidden="true">→</span>
-      ${p.img ? `<img class="p-thumb" data-src="${p.img}" alt="">` : ''}
+      ${p.img ? `<img class="p-thumb" data-src="${p.img}" alt="" loading="lazy" decoding="async">` : ''}
     </a>`).join('');
   setImgs(list);
   document.getElementById('proj-count').textContent = L(`${PROJECTS.length} entrées · 2022 → aujourd'hui`, `${PROJECTS.length} entries · 2022 → today`);
@@ -652,7 +695,7 @@ function renderDetail(id){
   document.getElementById('d-next').href = '#p-' + PROJECTS[(i + 1) % N].id;
   const extra = p.ext ? `<a class="btn" href="${p.ext}" target="_blank" rel="noopener">${p.extLabel ? pick(p.extLabel) : L('Voir le site ↗','Visit the site ↗')}</a>` : '';
   stash.appendChild(study); /* ramène l'étude BA13 avant d'écraser la fiche */
-  const gal = p.gallery ? `<div class="d-gal">${p.gallery.map(g => `<figure><img data-src="${g[0]}" alt="${lang === 'en' ? g[2] : g[1]}" loading="lazy"><figcaption class="mono">${lang === 'en' ? g[2] : g[1]}</figcaption></figure>`).join('')}</div>` : '';
+  const gal = p.gallery ? `<div class="d-gal">${p.gallery.map(g => `<figure><img data-src="${g[0]}" alt="${lang === 'en' ? g[2] : g[1]}" loading="lazy" decoding="async"><figcaption class="mono">${lang === 'en' ? g[2] : g[1]}</figcaption></figure>`).join('')}</div>` : '';
   dContent.innerHTML = `
     <figure class="d-hero">${heroHTML(p)}</figure>
     <div class="d-rest">
@@ -928,6 +971,7 @@ function showPreview(p){
   if (!pvOn){ const lr = document.getElementById('proj-list').getBoundingClientRect(); px = Math.max(mouse.x + 60, lr.left + lr.width * .46); py = mouse.y - 128; }
   pvOn = true; pv.classList.add('on');
 }
+let warmed = false;
 function bindPreviews(){
   if (!fine) return;
   document.querySelectorAll('.proj').forEach(el => {
@@ -936,6 +980,9 @@ function bindPreviews(){
     el.addEventListener('pointerleave', () => { cur.classList.remove('hide'); });
   });
   const list = document.getElementById('proj-list');
+  // les vignettes sont en chargement différé : on télécharge les images d'aperçu à l'approche de la liste,
+  // pour que le premier survol reste instantané
+  if (!warmed){ warmed = true; const io = new IntersectionObserver(es => { if (!es.some(e => e.isIntersecting)) return; io.disconnect(); PROJECTS.forEach(q => { if (q.img) new Image().src = IMG[q.img]; }); }, { rootMargin:'600px 0px' }); io.observe(list); }
   list.onpointerleave = () => { pvOn = false; pv.classList.remove('on'); pvImgs.forEach(im => im.classList.remove('show')); pvNote.classList.remove('show'); };
 }
 if (fine){
@@ -974,7 +1021,7 @@ function cvLabel(){
     else b.removeAttribute('aria-disabled');
   });
 }
-cvBtns.forEach(b => fetch(b.getAttribute('href'), { method:'HEAD' }).then(r => { if (!r.ok) b.dataset.missing = '1'; cvLabel(); }).catch(() => {}));
+afterPaint(() => cvBtns.forEach(b => fetch(b.getAttribute('href'), { method:'HEAD' }).then(r => { if (!r.ok) b.dataset.missing = '1'; cvLabel(); }).catch(() => {})));
 (async () => { try { downloads = window.claude?.use ? await window.claude.use('downloads') : null; } catch(_) { downloads = null; } })();
 cvBtns.forEach(b => b.addEventListener('click', async e => {
   if (!downloads) return;            // sans la capacité, le lien ouvre le PDF dans un nouvel onglet

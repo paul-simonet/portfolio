@@ -26,6 +26,12 @@ const session = { get(){ try { return sessionStorage.getItem(DONE); } catch(_){ 
 // « réduire les animations » : pas d'entrée du tout
 if (matchMedia('(prefers-reduced-motion: reduce)').matches){ intro.remove(); track.remove(); return; }
 
+/* Pas de vrai GPU (WebGL rendu par le processeur) : pas d'entrée non plus, comme sans WebGL.
+   Le script du <head> a déjà fait le test si l'entrée devait se jouer ; sinon (lien direct, entrée déjà vue)
+   on le fait ici, pour savoir si le bouton « Intro » a un sens. */
+const softGL = root.dataset.gl ? root.dataset.gl === 'soft' : !window.psGPU || !window.psGPU();
+if (softGL){ intro.remove(); track.remove(); return; }
+
 let live = false, looping = false, supported = true, world = null, building = null;
 let pDisp = 0, snapNext = true, lastP = -1, last = performance.now();
 
@@ -72,6 +78,7 @@ addEventListener('scroll', () => { if (live && scrollY > end()) scrollTo({ top: 
 function start(){
   if (live || !supported) return;
   live = true;
+  root.classList.remove('skip-intro');
   track.hidden = false; intro.hidden = false;
   intro.style.opacity = 1; intro.style.visibility = 'visible'; intro.classList.remove('passed');
   body.classList.add('in-intro', 'intro-live');
@@ -87,7 +94,7 @@ function ensureWorld(){
   building = (async () => {
     try {
       loadEl.textContent = '4 %';
-      const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js');
+      const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js');
       world = await build(THREE, v => { loadEl.textContent = Math.round(v * 100) + ' %'; });
       snapNext = true; lastP = -1;
       intro.classList.remove('loading'); intro.classList.add('ready');
