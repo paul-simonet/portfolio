@@ -866,7 +866,10 @@ function applyLang(l){
   lang = l; store.set('ps-lang', l); root.lang = l;
   document.querySelectorAll('[data-en]').forEach(el => {
     if (el.dataset.fr === undefined) el.dataset.fr = el.innerHTML;
-    el.innerHTML = l === 'en' ? el.dataset.en : el.dataset.fr;
+    // on ne réécrit que si le texte change : au chargement en français, le texte déjà affiché reste en place
+    // (le remplacer à l'identique détruit ce que le navigateur a peint, et peut annuler la mesure du LCP)
+    const html = l === 'en' ? el.dataset.en : el.dataset.fr;
+    if (el.innerHTML !== html) el.innerHTML = html;
   });
   document.querySelectorAll('[data-cursor-en]').forEach(el => {
     if (el.dataset.cursorFr === undefined) el.dataset.cursorFr = el.dataset.cursor;
